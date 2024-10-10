@@ -1,6 +1,7 @@
 package ru.kirbri.tests;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -33,6 +34,7 @@ public class QaGuruTest extends TestBase{
         @Tag("√лавна€ страница")
             })
     @MethodSource
+    @DisplayName("Ќа главной странице qa.guru есть возможно открыть страницу курса")
     @ParameterizedTest
     void qaGuruSiteShouldCorrectCourseTest(String expectedUrl, String expectedText) {
         String checkText;
