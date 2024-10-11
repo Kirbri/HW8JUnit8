@@ -31,7 +31,7 @@ public class QaGuruTest extends TestBase{
 
     @Tags({
         @Tag("WEB"),
-        @Tag("√лавна€ страница")
+        @Tag("SMOKE")
             })
     @MethodSource
     @DisplayName("Ќа главной странице qa.guru есть возможно открыть страницу курса")

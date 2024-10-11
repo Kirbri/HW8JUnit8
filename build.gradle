@@ -13,10 +13,15 @@ dependencies {
     testImplementation(
             "com.codeborne:selenide:7.5.1",
             "org.junit.jupiter:junit-jupiter:5.11.2",
-            "org.slf4j:slf4j-simple:2.0.16"
+            "org.slf4j:slf4j-simple:2.0.16",
+            "org.junit.platform:junit-platform-suite-api:1.11.2"
     )
 }
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform{
+        if (project.hasProperty("includeTags")) {
+            includeTags(project.property("includeTags") as String)
+        }
+    }
 }

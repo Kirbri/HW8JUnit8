@@ -72,7 +72,7 @@ public class YandexSearchTest extends TestBase {
             "Quality Assurance", "Quality Control", "Software Quality"
     })
     @ParameterizedTest(name = "Поисковый запрос на ya.ru : {0} должен отдавать не нулевой список результатов")
-    @Tag("SMOKE")
+    @Tag("BLOCKER")
     void successfulSearchResultShouldBeMore20ResultTest(String searchQuery) {
         $("#text").setValue(searchQuery);
         $(".search3__button").click();
@@ -83,7 +83,7 @@ public class YandexSearchTest extends TestBase {
             "java", "git", "github", "ci cd"
     })
     @ParameterizedTest(name = "Поисковый запрос на ya.ru : {0} должен отдавать не пустой список картинок")
-    @Tag("BLOCKER")
+    @Tag("SMOKE")
     void successfulSearchPhotoTest(String searchQuery) {
         $("#text").setValue(searchQuery);
         $(".search3__button").click();

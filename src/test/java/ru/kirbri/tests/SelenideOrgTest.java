@@ -29,7 +29,7 @@ public class SelenideOrgTest extends TestBase{
 //        System.out.println(Language.EN);
 //    }
 
-    @Tag("WEB")
+    @Tag("SMOKE")
     @EnumSource(Language.class)
     @ParameterizedTest
     void selenideSiteShouldDisplayCorrectTest(Language language) {
@@ -49,7 +49,7 @@ public class SelenideOrgTest extends TestBase{
         );
     }
 
-    @Tag("WEB")
+    @Tag("BLOCKER")
     @MethodSource
     @ParameterizedTest
     void selenideSiteShouldDisplayCorrectButtonsTest(Language language, List<String> expectedButtons) {
