@@ -9,6 +9,13 @@ repositories {
     mavenCentral()
 }
 
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
 dependencies {
     testImplementation(
             "com.codeborne:selenide:7.5.1",
@@ -16,6 +23,17 @@ dependencies {
             "org.slf4j:slf4j-simple:2.0.16",
             "org.junit.platform:junit-platform-suite-api:1.11.2"
     )
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+}
+
+task webTest(type: Test) {
+    useJUnitPlatform {
+        includeTags("WEB")
+    }
 }
 
 test {
